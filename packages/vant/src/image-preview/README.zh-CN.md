@@ -209,16 +209,17 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active: number) => boolean \| Promise\<boolean\>_ | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| closeOnClickOverlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
 | className | 自定义类名 | _string \| Array \| object_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
 | closeIcon | 关闭图标名称或图片链接 | _string_ | `clear` |
 | closeIconPosition | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
 | overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
-| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 
 ### Props
 
@@ -235,22 +236,23 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | loop | 是否开启循环播放 | _boolean_ | `true` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| close-on-click-overlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
 | class-name | 自定义类名 | _string \| Array \| object_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon | 关闭图标名称或图片链接 | _string_ | `clear` |
 | close-icon-position | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
 | overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlay-style | 自定义遮罩层样式 | _object_ | - |
-| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 
 ### Events
 
 通过组件调用 `ImagePreview` 时，支持以下事件：
 
-| 事件       | 说明                   | 回调参数                           |
+| 事件名     | 说明                   | 回调参数                           |
 | ---------- | ---------------------- | ---------------------------------- |
 | close      | 关闭时触发             | _{ index: number, url: string }_   |
 | closed     | 关闭且且动画结束后触发 | -                                  |

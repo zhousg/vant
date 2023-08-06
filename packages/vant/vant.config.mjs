@@ -252,6 +252,14 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'DropdownMenu 下拉菜单',
               },
               {
+                path: 'floating-panel',
+                title: 'FloatingPanel 浮动面板',
+              },
+              {
+                path: 'floating-bubble',
+                title: 'FloatingBubble 浮动气泡',
+              },
+              {
                 path: 'loading',
                 title: 'Loading 加载',
               },
@@ -327,6 +335,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'progress',
                 title: 'Progress 进度条',
+              },
+              {
+                path: 'rolling-text',
+                title: 'RollingText 翻滚文本',
               },
               {
                 path: 'skeleton',
@@ -704,6 +716,14 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'DropdownMenu',
               },
               {
+                path: 'floating-panel',
+                title: 'FloatingPanel',
+              },
+              {
+                path: 'floating-bubble',
+                title: 'FloatingBubble',
+              },
+              {
                 path: 'loading',
                 title: 'Loading',
               },
@@ -779,6 +799,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'progress',
                 title: 'Progress',
+              },
+              {
+                path: 'rolling-text',
+                title: 'RollingText',
               },
               {
                 path: 'skeleton',

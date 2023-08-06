@@ -13,11 +13,142 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Release Schedule**
 
-- Patch version：released weekly, including features and bug fixes.
-- Minor version：released every one to two months, including backwards compatible features.
-- Major version：including breaking changes and new features.
+- Patch version：Typically released every 1 to 2 weeks, including new features and bug fixes.
+- Minor version：Typically released every 1 to 2 months, including new components or significant feature updates, with backward compatibility.
+- Major version：No fixed release time, includes breaking changes and major feature updates.
 
 ## Details
+
+### v4.6.4
+
+`2023-08-06`
+
+#### New Features 🎉
+
+- feat(area-data): update counties of WuHu by [nivin-studio](https://github.com/nivin-studio) in [#12122](https://github.com/youzan/vant/pull/12122)
+- feat(Locale): add Serbian language to internationalization by [RogerZXY](https://github.com/RogerZXY) in [#12145](https://github.com/youzan/vant/pull/12145)
+- feat(ImagePreview): add closeOnClickOverlay option by [chenjiahan](https://github.com/chenjiahan) in [#12153](https://github.com/youzan/vant/pull/12153)
+- feat(List): add scroller prop by [chenjiahan](https://github.com/chenjiahan) in [#12154](https://github.com/youzan/vant/pull/12154)
+- feat(FloatingPanel): add lock-scroll prop by [inottn](https://github.com/inottn) in [#12157](https://github.com/youzan/vant/pull/12157)
+
+#### Bug Fixes 🐞
+
+- fix(TextEllipsis): dots repeated by [muzaisimao](https://github.com/muzaisimao) in [#12120](https://github.com/youzan/vant/pull/12120)
+- fix(TextEllipsis): fix the logic of calculating the position of ellipsis by [inottn](https://github.com/inottn) in [#12137](https://github.com/youzan/vant/pull/12137)
+
+#### Document 📖
+
+- docs: move PR title format to contribution guide by [chenjiahan](https://github.com/chenjiahan) in [#12114](https://github.com/youzan/vant/pull/12114)
+- docs(Radio): add document description for the css var '--van-radio-dot-size' by [wjw-gavin](https://github.com/wjw-gavin) in [#12152](https://github.com/youzan/vant/pull/12152)
+
+#### Other Changes
+
+- chore: avoid prettier breaking hbs template by [chenjiahan](https://github.com/chenjiahan) in [#12113](https://github.com/youzan/vant/pull/12113)
+- chore(deps): bump release-it v16 by [chenjiahan](https://github.com/chenjiahan) in [#12115](https://github.com/youzan/vant/pull/12115)
+- feat(get-deps): import('../foo.vue') => import('../foo.mjs') 的替换 by [suncohey](https://github.com/suncohey) in [#12046](https://github.com/youzan/vant/pull/12046)
+- refactor(cli): rewrite release command by [chenjiahan](https://github.com/chenjiahan) in [#12133](https://github.com/youzan/vant/pull/12133)
+- feat(cli): support gitTag option for release command by [chenjiahan](https://github.com/chenjiahan) in [#12134](https://github.com/youzan/vant/pull/12134)
+- chore(CI): automatically generate changelog via GitHub by [chenjiahan](https://github.com/chenjiahan) in [#12135](https://github.com/youzan/vant/pull/12135)
+- chore: add PR labeler action by [chenjiahan](https://github.com/chenjiahan) in [#12136](https://github.com/youzan/vant/pull/12136)
+- chore(TextEllipsis): reuse actionText variable by [chenjiahan](https://github.com/chenjiahan) in [#12138](https://github.com/youzan/vant/pull/12138)
+- refactor(cli): use GitHub changelog instead of conventional-changelog by [chenjiahan](https://github.com/chenjiahan) in [#12139](https://github.com/youzan/vant/pull/12139)
+- chore: add Serbian to doc and rename the file by [chenjiahan](https://github.com/chenjiahan) in [#12150](https://github.com/youzan/vant/pull/12150)
+- chore(eslint-config): bump dependencies by [chenjiahan](https://github.com/chenjiahan) in [#12155](https://github.com/youzan/vant/pull/12155)
+
+#### New Contributors
+
+- [muzaisimao](https://github.com/muzaisimao) made their first contribution in [#12120](https://github.com/youzan/vant/pull/12120)
+- [suncohey](https://github.com/suncohey) made their first contribution in [#12046](https://github.com/youzan/vant/pull/12046)
+- [nivin-studio](https://github.com/nivin-studio) made their first contribution in [#12122](https://github.com/youzan/vant/pull/12122)
+- [RogerZXY](https://github.com/RogerZXY) made their first contribution in [#12145](https://github.com/youzan/vant/pull/12145)
+
+### [v4.6.3](https://github.com/vant-ui/vant/compare/v4.6.2...v4.6.3)
+
+`2023-07-23`
+
+**Feature**
+
+- AddressList: add show-add-button prop [#12090](https://github.com/vant-ui/vant/issues/12090)
+- CheckboxGroup: add shape prop [#12092](https://github.com/vant-ui/vant/issues/12092)
+- RadioGroup: add shape prop [#12092](https://github.com/vant-ui/vant/issues/12092)
+
+**Bug Fixes**
+
+- FloatingBubble: fix global component type [#12101](https://github.com/vant-ui/vant/issues/12101)
+- Tab: fix incorrect import path [#12103](https://github.com/vant-ui/vant/issues/12103)
+
+### [v4.6.2](https://github.com/vant-ui/vant/compare/v4.6.1...v4.6.2)
+
+`2023-07-09`
+
+**Feature**
+
+- Field: add autocapitalize, autocorrect and spellcheck props [#12065](https://github.com/vant-ui/vant/issues/12065)
+- FloatingBubble: add CSS vars to override border radius [#12070](https://github.com/vant-ui/vant/issues/12070)
+- Radio: add dot shape [#12057](https://github.com/vant-ui/vant/issues/12057)
+- TextEllipsis: add position prop, contributed by [cxybd](https://github.com/cxybd) ❤️ [#12058](https://github.com/vant-ui/vant/issues/12058)
+
+**Bug Fixes**
+
+- FloatingBubble: fix wrong value of boundary [#12067](https://github.com/vant-ui/vant/issues/12067)
+- Pagination: display the border correctly [#12062](https://github.com/vant-ui/vant/issues/12062)
+
+### [v4.6.1](https://github.com/vant-ui/vant/compare/v4.6.0...v4.6.1)
+
+`2023-07-02`
+
+**Feature**
+
+- ellipsis: improve break lines of Chinese, Japanese, or Korean text [#12030](https://github.com/vant-ui/vant/issues/12030)
+
+**Bug Fixes**
+
+- FloatingBubble: floatingBubbleBackground type should be optional [#12029](https://github.com/vant-ui/vant/issues/12029)
+- SubmitBar: remove redundant theme types [#12031](https://github.com/vant-ui/vant/issues/12031)
+- Uploader: render objectUrl to avoid perf issue [#12051](https://github.com/vant-ui/vant/issues/12051)
+
+### [v4.6.0](https://github.com/vant-ui/vant/compare/v4.5.0...v4.6.0)
+
+`2023-06-24`
+
+**New Component**
+
+- add new FloatingBubble component, contributed by [@zhousg](https://github.com/zhousg) ❤️ [#11880](https://github.com/vant-ui/vant/issues/11880)
+- add new RollingText component, contributed by [@cunzaizhuyi](https://github.com/cunzaizhuyi) ❤️ [#11911](https://github.com/vant-ui/vant/issues/11911)
+
+**Feature**
+
+- Rate: add clearable prop [#11969](https://github.com/vant-ui/vant/issues/11969)
+
+**Bug Fixes**
+
+- DropdownMenu: fix missing exported type [#11979](https://github.com/vant-ui/vant/issues/11979)
+- Field: should not set `for` attr to label when using input slot [#11966](https://github.com/vant-ui/vant/issues/11966)
+- FloatingPanel: fix missing floatingPanelProps export [#11978](https://github.com/vant-ui/vant/issues/11978)
+- FloatingPanel: remove passive event warning [#11992](https://github.com/vant-ui/vant/issues/11992)
+- Picker: optimize the animation effect of sliding multiple columns simultaneously [#11945](https://github.com/vant-ui/vant/issues/11945)
+- Rate: should change value when half icon is touchmoved [#12002](https://github.com/vant-ui/vant/issues/12002)
+
+### [v4.5.0](https://github.com/vant-ui/vant/compare/v4.4.1...v4.5.0)
+
+`2023-06-11`
+
+**New Component**
+
+- add new FloatingPanel component, contributed by [@zhousg](https://github.com/zhousg) ❤️ [#11832](https://github.com/vant-ui/vant/issues/11832)
+
+**Feature**
+
+- AddressList: add new right-icon props [#11959](https://github.com/vant-ui/vant/issues/11959)
+- DropdownMenu: add close method [#11921](https://github.com/vant-ui/vant/issues/11921)
+- Slider: add dragging param for button slot [#11946](https://github.com/vant-ui/vant/issues/11946)
+- TimePicker: add min-time and max-time prop [#11887](https://github.com/vant-ui/vant/issues/11887)
+- TimePicker: add values param for filter method [#11916](https://github.com/vant-ui/vant/issues/11916)
+- CI: add issue helper [#11963](https://github.com/vant-ui/vant/issues/11963)
+
+**Bug Fixes**
+
+- BackTop: should hide when deactivated [#11938](https://github.com/vant-ui/vant/issues/11938)
 
 ### [v4.4.1](https://github.com/vant-ui/vant/compare/v4.4.0...v4.4.1)
 

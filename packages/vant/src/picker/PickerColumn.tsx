@@ -78,10 +78,14 @@ export default defineComponent({
       (props.optionHeight * (+props.visibleOptionNum - 1)) / 2;
 
     const updateValueByIndex = (index: number) => {
-      const enabledIndex = findIndexOfEnabledOption(props.options, index);
+      let enabledIndex = findIndexOfEnabledOption(props.options, index);
       const offset = -enabledIndex * props.optionHeight;
 
       const trigger = () => {
+        if (enabledIndex > count() - 1) {
+          enabledIndex = findIndexOfEnabledOption(props.options, index);
+        }
+
         const value = props.options[enabledIndex][props.fields.value];
         if (value !== props.value) {
           emit('change', value);
@@ -172,7 +176,7 @@ export default defineComponent({
       const newOffset = clamp(
         startOffset + touch.deltaY.value,
         -(count() * props.optionHeight),
-        props.optionHeight
+        props.optionHeight,
       );
 
       const newIndex = getIndexByOffset(newOffset);
@@ -259,11 +263,14 @@ export default defineComponent({
     useExpose({ stopMomentum });
 
     watchEffect(() => {
-      const index = props.options.findIndex(
-        (option) => option[props.fields.value] === props.value
-      );
+      const index = moving
+        ? Math.floor(-currentOffset.value / props.optionHeight)
+        : props.options.findIndex(
+            (option) => option[props.fields.value] === props.value,
+          );
       const enabledIndex = findIndexOfEnabledOption(props.options, index);
       const offset = -enabledIndex * props.optionHeight;
+      if (moving && enabledIndex < index) stopMomentum();
       currentOffset.value = offset;
     });
 

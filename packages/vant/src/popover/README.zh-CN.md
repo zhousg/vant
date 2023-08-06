@@ -293,7 +293,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model:show | 是否展示气泡弹出层 | _boolean_ | `false` |
 | actions | 选项列表 | _PopoverAction[]_ | `[]` |
-| actions-direction | 选项列表的排列方向，可选值为 `horizontal` | _PopoverActionsDirection_ | `vertical` |
+| actions-direction `v4.4.1` | 选项列表的排列方向，可选值为 `horizontal` | _PopoverActionsDirection_ | `vertical` |
 | placement | 弹出位置 | _PopoverPlacement_ | `bottom` |
 | theme | 主题风格，可选值为 `dark` | _PopoverTheme_ | `light` |
 | trigger | 触发方式，可选值为 `manual` | _PopoverTrigger_ | `click` |
@@ -306,7 +306,7 @@ export default {
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
-| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
 ### PopoverAction 数据结构

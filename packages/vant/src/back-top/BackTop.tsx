@@ -9,6 +9,8 @@ import {
   type PropType,
   type TeleportProps,
   type ExtractPropTypes,
+  onDeactivated,
+  onActivated,
 } from 'vue';
 
 // Utils
@@ -57,6 +59,7 @@ export default defineComponent({
   emits: ['click'],
 
   setup(props, { emit, slots, attrs }) {
+    let shouldReshow = false;
     const show = ref(false);
     const root = ref<HTMLElement>();
     const scrollParent = ref<Window | Element>();
@@ -65,7 +68,7 @@ export default defineComponent({
       extend(getZIndexStyle(props.zIndex), {
         right: addUnit(props.right),
         bottom: addUnit(props.bottom),
-      })
+      }),
     );
 
     const onClick = (event: MouseEvent) => {
@@ -94,7 +97,7 @@ export default defineComponent({
 
         if (process.env.NODE_ENV !== 'production') {
           console.error(
-            `[Vant] BackTop: target element "${target}" was not found, the BackTop component will not be rendered.`
+            `[Vant] BackTop: target element "${target}" was not found, the BackTop component will not be rendered.`,
           );
         }
       } else {
@@ -116,6 +119,22 @@ export default defineComponent({
     useEventListener('scroll', throttle(scroll, 100), { target: scrollParent });
 
     onMounted(updateTarget);
+
+    onActivated(() => {
+      if (shouldReshow) {
+        show.value = true;
+        shouldReshow = false;
+      }
+    });
+
+    onDeactivated(() => {
+      // teleported back-top should be hide when deactivated
+      if (show.value && props.teleport) {
+        show.value = false;
+        shouldReshow = true;
+      }
+    });
+
     watch(() => props.target, updateTarget);
 
     return () => {

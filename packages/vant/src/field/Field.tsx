@@ -87,8 +87,14 @@ export const fieldSharedProps = {
   inputAlign: String as PropType<FieldTextAlign>,
   placeholder: String,
   autocomplete: String,
+  autocapitalize: String,
+  autocorrect: String,
   errorMessage: String,
   enterkeyhint: String,
+  spellcheck: {
+    type: Boolean,
+    default: null,
+  },
   clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
   formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
   error: {
@@ -223,7 +229,7 @@ export default defineComponent({
               });
             }
           }),
-        Promise.resolve()
+        Promise.resolve(),
       );
 
     const resetValidation = () => {
@@ -302,7 +308,7 @@ export default defineComponent({
 
     const updateValue = (
       value: string,
-      trigger: FieldFormatTrigger = 'onChange'
+      trigger: FieldFormatTrigger = 'onChange',
     ) => {
       const originalValue = value;
       value = limitValueLength(value);
@@ -355,7 +361,7 @@ export default defineComponent({
 
             inputRef.value.setSelectionRange(
               Math.min(selectionStart, valueLen),
-              Math.min(selectionEnd, valueLen)
+              Math.min(selectionEnd, valueLen),
             );
           }
         } else {
@@ -491,7 +497,10 @@ export default defineComponent({
         autofocus: props.autofocus,
         placeholder: props.placeholder,
         autocomplete: props.autocomplete,
+        autocapitalize: props.autocapitalize,
+        autocorrect: props.autocorrect,
         enterkeyhint: props.enterkeyhint,
+        spellcheck: props.spellcheck,
         'aria-labelledby': props.label ? `${id}-label` : undefined,
         onBlur,
         onFocus,
@@ -583,7 +592,7 @@ export default defineComponent({
         return (
           <label
             id={`${id}-label`}
-            for={getInputId()}
+            for={slots.input ? undefined : getInputId()}
             onClick={(event: MouseEvent) => {
               // https://github.com/youzan/vant/issues/11831
               preventDefault(event);
@@ -640,7 +649,7 @@ export default defineComponent({
         resetValidation();
         validateWithTrigger('onChange');
         nextTick(adjustTextareaSize);
-      }
+      },
     );
 
     onMounted(() => {

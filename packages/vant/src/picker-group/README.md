@@ -59,7 +59,7 @@ export default {
 
     const onConfirm = () => {
       showToast(
-        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`,
       );
     };
 
@@ -111,7 +111,7 @@ export default {
 
     const onConfirm = () => {
       showToast(
-        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`,
       );
     };
 
@@ -266,7 +266,7 @@ export default {
 
     const onConfirm = () => {
       showToast(
-        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`,
       );
     };
     const onCancel = () => {
@@ -293,7 +293,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model:active-tab | Set index of active tab | _number \| string_ | `0` |
+| v-model:active-tab `v4.3.2` | Set index of active tab | _number \| string_ | `0` |
 | tabs | Titles of tabs | _string[]_ | `[]` |
 | title | Toolbar title | _string_ | `''` |
 | next-step-text `v4.0.8` | Text of next step button | _string_ | `''` |

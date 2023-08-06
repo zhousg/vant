@@ -1,7 +1,13 @@
-import { watch, computed, defineComponent, type ExtractPropTypes } from 'vue';
+import {
+  watch,
+  computed,
+  defineComponent,
+  type PropType,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
-import { createNamespace, extend, pick, truthProp } from '../utils';
+import { pick, extend, truthProp, createNamespace } from '../utils';
 import { CHECKBOX_GROUP_KEY } from '../checkbox-group/CheckboxGroup';
 
 // Composables
@@ -9,7 +15,7 @@ import { useParent, useCustomFieldValue } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Checker, { checkerProps } from './Checker';
+import Checker, { checkerProps, type CheckerShape } from './Checker';
 
 // Types
 import type { CheckboxExpose } from './types';
@@ -17,6 +23,7 @@ import type { CheckboxExpose } from './types';
 const [name, bem] = createNamespace('checkbox');
 
 export const checkboxProps = extend({}, checkerProps, {
+  shape: String as PropType<CheckerShape>,
   bindGroup: truthProp,
 });
 
@@ -77,7 +84,7 @@ export default defineComponent({
 
     watch(
       () => props.modelValue,
-      (value) => emit('change', value)
+      (value) => emit('change', value),
     );
 
     useExpose<CheckboxExpose>({ toggle, props, checked });

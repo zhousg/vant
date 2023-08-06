@@ -117,7 +117,7 @@ export default defineComponent({
     };
 
     const onAfterRead = (
-      items: UploaderFileListItem | UploaderFileListItem[]
+      items: UploaderFileListItem | UploaderFileListItem[],
     ) => {
       resetInput();
 
@@ -161,13 +161,14 @@ export default defineComponent({
         }
 
         Promise.all(
-          files.map((file) => readFileContent(file, resultType))
+          files.map((file) => readFileContent(file, resultType)),
         ).then((contents) => {
           const fileList = (files as File[]).map((file, index) => {
             const result: UploaderFileListItem = {
               file,
               status: '',
               message: '',
+              objectUrl: URL.createObjectURL(file),
             };
 
             if (contents[index]) {
@@ -185,6 +186,7 @@ export default defineComponent({
             file: files as File,
             status: '',
             message: '',
+            objectUrl: URL.createObjectURL(files as File),
           };
 
           if (content) {
@@ -240,8 +242,8 @@ export default defineComponent({
         const imageFiles = props.modelValue.filter(isImageFile);
         const images = imageFiles
           .map((item) => {
-            if (item.file && !item.url && item.status !== 'failed') {
-              item.url = URL.createObjectURL(item.file);
+            if (item.objectUrl && !item.url && item.status !== 'failed') {
+              item.url = item.objectUrl;
               urls.push(item.url);
             }
             return item.url;
@@ -255,8 +257,8 @@ export default defineComponent({
               startPosition: imageFiles.indexOf(item),
               onClose: onClosePreview,
             },
-            props.previewOptions
-          )
+            props.previewOptions,
+          ),
         );
       }
     };
@@ -292,7 +294,7 @@ export default defineComponent({
 
       const previewData = extend(
         pick(props, needPickData),
-        pick(item, needPickData, true)
+        pick(item, needPickData, true),
       );
 
       return (
@@ -304,7 +306,7 @@ export default defineComponent({
             emit(
               props.reupload ? 'clickReupload' : 'clickPreview',
               item,
-              getDetail(index)
+              getDetail(index),
             )
           }
           onDelete={() => deleteFile(item, index)}

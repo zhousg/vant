@@ -195,6 +195,7 @@ Vant exports following ImagePreview utility functions:
 | onChange | Emitted when current image changed | _Function_ | - |
 | onScale | Emitted when scaling current image | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
+| closeOnClickOverlay `v4.6.4` | Whether to close when overlay is clicked | _boolean_ | `true` |
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
 | maxZoom | Max zoom | _number \| string_ | `3` |
@@ -202,7 +203,7 @@ Vant exports following ImagePreview utility functions:
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | closeIcon | Close icon name | _string_ | `clear` |
 | closeIconPosition | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
@@ -220,13 +221,14 @@ Vant exports following ImagePreview utility functions:
 | loop | Whether to enable loop | _boolean_ | `true` |
 | before-close | Callback function before close | _(action: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
+| close-on-click-overlay `v4.6.4` | Whether to close when overlay is clicked | _boolean_ | `true` |
 | class-name | Custom className | _string \| Array \| object_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |
 | min-zoom | Min zoom | _number \| string_ | `1/3` |
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `clear` |
 | close-icon-position | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |

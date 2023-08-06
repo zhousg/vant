@@ -1,7 +1,7 @@
-import { defineComponent, type ExtractPropTypes } from 'vue';
+import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
-import { pick, createNamespace } from '../utils';
+import { pick, extend, createNamespace } from '../utils';
 import { RADIO_KEY } from '../radio-group/RadioGroup';
 
 // Composables
@@ -10,13 +10,16 @@ import { useParent } from '@vant/use';
 // Components
 import Checker, {
   checkerProps,
-  CheckerShape,
-  CheckerLabelPosition,
+  type CheckerShape,
+  type CheckerLabelPosition,
 } from '../checkbox/Checker';
 
-export const radioProps = checkerProps;
+export type RadioShape = CheckerShape | 'dot';
 
-export type RadioShape = CheckerShape;
+export const radioProps = extend({}, checkerProps, {
+  shape: String as PropType<RadioShape>,
+});
+
 export type RadioLabelPosition = CheckerLabelPosition;
 export type RadioProps = ExtractPropTypes<typeof radioProps>;
 
@@ -25,7 +28,7 @@ const [name, bem] = createNamespace('radio');
 export default defineComponent({
   name,
 
-  props: checkerProps,
+  props: radioProps,
 
   emits: ['update:modelValue'],
 

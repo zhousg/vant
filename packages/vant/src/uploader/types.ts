@@ -8,6 +8,7 @@ export type UploaderResultType = 'dataUrl' | 'text' | 'file';
 export type UploaderFileListItem = {
   url?: string;
   file?: File;
+  objectUrl?: string;
   content?: string;
   isImage?: boolean;
   status?: '' | 'uploading' | 'done' | 'failed';
@@ -26,7 +27,7 @@ export type UploaderBeforeRead = (
   detail: {
     name: Numeric;
     index: number;
-  }
+  },
 ) => boolean | undefined | Promise<File | File[] | undefined>;
 
 export type UploaderAfterRead = (
@@ -34,7 +35,7 @@ export type UploaderAfterRead = (
   detail: {
     name: Numeric;
     index: number;
-  }
+  },
 ) => void;
 
 export type UploaderExpose = {

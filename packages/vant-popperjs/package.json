@@ -25,7 +25,7 @@
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
     "build:bundle": "node ./build.js",
     "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
-    "release": "pnpm build && release-it",
+    "release": "vant-cli release",
     "prepare": "pnpm build"
   },
   "repository": {
@@ -38,15 +38,8 @@
   "license": "MIT",
   "devDependencies": {
     "@popperjs/core": "^2.11.6",
-    "esbuild": "^0.17.12",
-    "release-it": "^15.4.1",
+    "esbuild": "^0.18.11",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.4"
-  },
-  "release-it": {
-    "git": {
-      "tag": false,
-      "commitMessage": "release: @vant/popperjs v${version}"
-    }
   }
 }
